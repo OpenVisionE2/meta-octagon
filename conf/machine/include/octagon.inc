@@ -13,8 +13,6 @@ DVBSKYPROVIDER = "kernel"
 
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = "\
 	kernel-module-cdfs \
-	${@bb.utils.contains('MACHINE_FEATURES', 'v3d', 'nextv-v3ddriver-${MACHINE}', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'v3d', 'platform-util-${MACHINE}', '',d)} \
     "
 
 MACHINE_EXTRA_RRECOMMENDS = " \
@@ -61,10 +59,6 @@ IMAGE_CMD_tar_prepend = "\
     rm -f ${DEPLOY_DIR_IMAGE}/.manifest; \
     rm -Rf ${IMAGEDIR}; \
 "
-
-PREFERRED_PROVIDER_virtual/egl = "nextv-v3ddriver-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles2 = "nextv-v3ddriver-${MACHINE}"
-PREFERRED_PROVIDER_virtual/kodi = "stb-kodi-${MACHINE}"
 
 MACHINE_FEATURES += "alsa 3dtv switchoff hdmicec omb blindscan-tbs blindscan-dvbc"
 

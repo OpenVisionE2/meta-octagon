@@ -1,5 +1,7 @@
 SRCDATE = "20171102"
 
+COMPATIBLE_MACHINE = "sf5008"
+
 require octagon-initrd.inc
 
 inherit deploy

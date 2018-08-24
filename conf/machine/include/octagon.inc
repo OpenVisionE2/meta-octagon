@@ -60,7 +60,7 @@ IMAGE_CMD_tar_prepend = "\
     rm -Rf ${IMAGEDIR}; \
 "
 
-MACHINE_FEATURES += "alsa 3dtv switchoff hdmicec omb blindscan-tbs blindscan-dvbc"
+MACHINE_FEATURES += "alsa 3dtv switchoff hdmicec omb blindscan-tbs blindscan-dvbc dvb-c ci textlcd videoenhancement emmc mmc"
 
 BOOTLOGO_FILENAME = "splash.bin"
 

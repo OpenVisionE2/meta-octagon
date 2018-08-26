@@ -15,6 +15,9 @@ S = "${WORKDIR}/patitions"
 
 SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-partitions-${SRCDATE}.zip"
 
+SRC_URI[md5sum] = "e4330098ade2c20581c0d0a139f6e6bb"
+SRC_URI[sha256sum] = "cd596025b3110173ae751bf5337729c16dba4a84758de55fda04c76b52b98431"
+
 ALLOW_EMPTY_${PN} = "1"
 
 do_install() {
@@ -39,8 +42,5 @@ do_deploy() {
 }
 
 addtask deploy before do_build after do_install
-
-SRC_URI[md5sum] = "e4330098ade2c20581c0d0a139f6e6bb"
-SRC_URI[sha256sum] = "cd596025b3110173ae751bf5337729c16dba4a84758de55fda04c76b52b98431"
 
 INSANE_SKIP_${PN} += "already-stripped"

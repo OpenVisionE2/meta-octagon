@@ -8,14 +8,14 @@ RDEPENDS_${PN} = "libsdl"
 
 COMPATIBLE_MACHINE = "sf8008"
 
-SRCDATE = "20180825"
+SRCDATE = "20180831"
 
 PV = "${SRCDATE}"
 
 SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-libreader-${SRCDATE}.tar.gz"
 
-SRC_URI[md5sum] = "5432e4b2af32c3f84079de1aedde7ddf"
-SRC_URI[sha256sum] = "8196bf4f5d1c81764b643e28626fc4ff1ef68c13089b4eac9719d65c417c0d98"
+SRC_URI[md5sum] = "0ccd0b633b030afa01ef1560fafcdfd0"
+SRC_URI[sha256sum] = "72dffcfa4b03a0ba57069e24ab04dad6cfffdf6316f9ade5cc4d61d1521f708b"
 
 S = "${WORKDIR}"
 

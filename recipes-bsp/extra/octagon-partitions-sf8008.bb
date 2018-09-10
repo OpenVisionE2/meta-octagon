@@ -7,7 +7,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit deploy
 
-SRCDATE = "20180831"
+SRCDATE = "20180910"
 
 COMPATIBLE_MACHINE = "sf8008"
 
@@ -15,8 +15,8 @@ S = "${WORKDIR}/patitions"
 
 SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-partitions-${SRCDATE}.zip"
 
-SRC_URI[md5sum] = "6946137f96ce3f1f81ce8cb8eeb038b7"
-SRC_URI[sha256sum] = "298c82288cb0567600396eb311db650084092c4e4cb0502ee6f83af00a5581b6"
+SRC_URI[md5sum] = "e40ac29c724bc44cd552ec639963ec3d"
+SRC_URI[sha256sum] = "7380f574d467a880416f6ef85f7378b8b500379e85e9e2726079853d1dd24bbc"
 
 ALLOW_EMPTY_${PN} = "1"
 

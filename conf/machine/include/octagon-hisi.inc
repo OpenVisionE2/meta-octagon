@@ -11,13 +11,14 @@ MTD_ROOTFS = "mmcblk0p13"
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
 
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     octagon-dvb-modules-${MACHINE} \
     octagon-loadmodules-${MACHINE} \ 
     octagon-libs-${MACHINE} \
     octagon-reader-${MACHINE} \
     octagon-libreader-${MACHINE} \
     octagon-partitions-${MACHINE} \
+    octagon-buildimage \
     e2fsprogs-resize2fs \
     gptfdisk \
 "
@@ -39,7 +40,7 @@ PREFERRED_RPROVIDER_showiframe = "octagon-showiframe-${MACHINE}"
 
 require conf/machine/include/tune-cortexa15.inc
 
-MACHINE_EXTRA_RRECOMMENDS = " \
+MACHINE_EXTRA_RRECOMMENDS += "\
     gstreamer1.0-plugin-dvbmediasink \
     gstreamer1.0-libav \
     "

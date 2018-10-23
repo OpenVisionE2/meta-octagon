@@ -12,7 +12,7 @@ SRCDATE = "20181020"
 
 PV = "${SRCDATE}"
 
-SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-libreader-${SRCDATE}.zip"
+SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-libreader-${SRCDATE}.tar.gz"
 
 SRC_URI[md5sum] = "92ed914c827ede50906c188d87961ff9"
 SRC_URI[sha256sum] = "32e2f936c2d279f6536c14cb238d7eb98b7a70333cfb1ab832c50c130cd5a879"

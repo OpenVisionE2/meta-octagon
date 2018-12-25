@@ -1,2 +1,2 @@
 # meta-octagon
-Octagon BSP layer for PLi's OE
+Octagon BSP layer for Open Vision

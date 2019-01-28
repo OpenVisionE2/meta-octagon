@@ -19,6 +19,7 @@ SRC_URI[md5sum] = "e40ac29c724bc44cd552ec639963ec3d"
 SRC_URI[sha256sum] = "7380f574d467a880416f6ef85f7378b8b500379e85e9e2726079853d1dd24bbc"
 
 ALLOW_EMPTY_${PN} = "1"
+do_configure[nostamp] = "1"
 
 do_install() {
     install -d ${D}/usr/share

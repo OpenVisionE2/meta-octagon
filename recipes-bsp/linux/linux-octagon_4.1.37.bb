@@ -6,6 +6,8 @@ SRC = "20170227"
 
 inherit kernel machine_kernel_pr
 
+MACHINE_KERNEL_PR_append = ".1"
+
 KERNEL_RELEASE = "4.1.37"
 
 COMPATIBLE_MACHINE = "sf4008"
@@ -35,6 +37,7 @@ SRC_URI += "http://source.mynonpublic.com/octagon/octagon-linux-${PV}-${SRC}.tar
     file://rtl2832-add-support-for-GoTView-MasterHD-3-USB-tuner.patch \
     file://if_port.patch \
     file://t230c.patch \
+    file://0001-media-Technisat-SkyStar-USB-HD-DVB-S-S2-too-much-URB.patch \
     "
 
 S = "${WORKDIR}/linux-${PV}"

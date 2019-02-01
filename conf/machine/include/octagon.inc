@@ -35,7 +35,7 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbc = "octagon-blindscan-utils"
 
 MTD_ROOTFS = "mmcblk0p4"
 MTD_KERNEL = "mmcblk0p3"
-MTD_BLACK  = "mmcblk0"
+
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
 

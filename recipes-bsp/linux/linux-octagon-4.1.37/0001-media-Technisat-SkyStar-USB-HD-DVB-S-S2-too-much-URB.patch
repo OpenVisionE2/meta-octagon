@@ -1,0 +1,30 @@
+From 3139f43f8eca4d3a8a0ffe3b0b9cd8ebe0e3be95 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Christian=20L=C3=B6pke?= <loepke@edfritsch.de>
+Date: Sat, 18 Jul 2015 04:15:01 -0300
+Subject: [PATCH] [media] Technisat SkyStar USB HD,(DVB-S/S2) too much URBs for
+ arm devices
+
+Using 8 URBs results in a consecutive buffer allocation of too much
+memory for some arm devices.
+As we use isochronuous transfers the number of URBs can be reduced
+without risking data-loss.
+
+Signed-off-by: Christian Loepke <loepke@edfritsch.de>
+Signed-off-by: Mauro Carvalho Chehab <mchehab@osg.samsung.com>
+
+diff --git a/drivers/media/usb/dvb-usb/technisat-usb2.c b/drivers/media/usb/dvb-usb/technisat-usb2.c
+index 03f334d..6c3c477 100644
+--- a/drivers/media/usb/dvb-usb/technisat-usb2.c
++++ b/drivers/media/usb/dvb-usb/technisat-usb2.c
+@@ -707,7 +707,7 @@ static struct dvb_usb_device_properties technisat_usb2_devices = {
+ 
+ 			.stream = {
+ 				.type = USB_ISOC,
+-				.count = 8,
++				.count = 4,
+ 				.endpoint = 0x2,
+ 				.u = {
+ 					.isoc = {
+-- 
+2.1.4
+

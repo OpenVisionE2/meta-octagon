@@ -36,6 +36,7 @@ PREFERRED_PROVIDER_virtual/kernel = "linux-octagon"
 PREFERRED_VERSION_linux-octagon = "4.4.35"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "octagon-blindscan-${MACHINE}"
 PREFERRED_RPROVIDER_showiframe = "octagon-showiframe-${MACHINE}"
+PREFERRED_PROVIDER_virtual/enigma2-mediaservice ?= "enigma2-plugin-systemplugins-servicehisilicon"
 
 require conf/machine/include/tune-cortexa15.inc
 

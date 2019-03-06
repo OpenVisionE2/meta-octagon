@@ -10,14 +10,14 @@ COMPATIBLE_MACHINE = "sf8008"
 PROVIDES += "virtual/blindscan-dvbs"
 RPROVIDES_${PN} += "virtual/blindscan-dvbs"
 
-SRCDATE = "20190226"
+SRCDATE = "20190305"
 
 PV = "${SRCDATE}"
 
 SRC_URI  = "http://source.mynonpublic.com/octagon/${MACHINE}-blindscan-${SRCDATE}.zip"
 
-SRC_URI[md5sum] = "022b4899e397c1c312e97721836b215f"
-SRC_URI[sha256sum] = "375a0c9c8a1aab230c9ed30c5c49e023229aee91ca446621bdaab825ab25c514"
+SRC_URI[md5sum] = "643ec0736a15f3aa16023772d1462a13"
+SRC_URI[sha256sum] = "c1c72d745d094c6b78203302e187e828e2293b72c804030c9246c296f63d4aa1"
 
 S = "${WORKDIR}"
 

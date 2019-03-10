@@ -8,7 +8,7 @@ SRCDATE = "20181224"
 
 inherit kernel machine_kernel_pr
 
-MACHINE_KERNEL_PR_append = ".5"
+MACHINE_KERNEL_PR_append = ".6"
 
 COMPATIBLE_MACHINE = "sf8008"
 
@@ -28,6 +28,7 @@ RPROVIDES_kernel-image = "kernel-image-${KERNEL_VERSION}"
 SRC_URI += "http://source.mynonpublic.com/octagon/octagon-linux-${PV}-${SRCDATE}.tar.gz \
     file://defconfig \
     file://0001-remote.patch \
+    file://HauppaugeWinTV-dualHD.patch \
     file://findkerneldevice.py \
 "
 

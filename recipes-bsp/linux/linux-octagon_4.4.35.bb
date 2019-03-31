@@ -8,7 +8,7 @@ SRCDATE = "20181224"
 
 inherit kernel machine_kernel_pr
 
-MACHINE_KERNEL_PR_append = ".7"
+MACHINE_KERNEL_PR_append = ".8"
 
 COMPATIBLE_MACHINE = "sf8008"
 
@@ -32,6 +32,7 @@ SRC_URI += "http://source.mynonpublic.com/octagon/octagon-linux-${PV}-${SRCDATE}
     file://dib7000-linux_4.4.179.patch \
     file://dvb-usb-linux_4.4.179.patch \
     file://findkerneldevice.py \
+    file://mt7601u_check_return_value_of_alloc_skb.patch \
 "
 
 S = "${WORKDIR}/linux-${PV}"

@@ -1,9 +1,9 @@
 KV = "4.4.35"
-SRCDATE = "20190308"
+SRCDATE = "20190321"
 
 require octagon-dvb-modules-hisi.inc
 
 COMPATIBLE_MACHINE = "sf8008"
 
-SRC_URI[md5sum] = "e1466c77acda75b54d267971b38c6061"
-SRC_URI[sha256sum] = "53a19c506cbc9e9de359d76ae7296534d88fa6140eb211dc55e0fe32f0e98ecb"
+SRC_URI[md5sum] = "a73965f4b593cc0e7fef29905a3a5a9a"
+SRC_URI[sha256sum] = "0b94db804121da8acb92eb3a546aa4c96f22dfb0f00473a10f83e614647259fa"

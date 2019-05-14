@@ -21,10 +21,13 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     octagon-partitions-${MACHINE} \
     e2fsprogs-resize2fs \
     gptfdisk \
+    rtl8192eu \
+    firmware-rtl8192eu \
+    kernel-module-mt7601u \
+    firmware-mt7601u \
 "
 
 MACHINE_FEATURES += "switchoff 7segment hdmicec textlcd emmc mmc blindscan-dvbs alsa"
-#MACHINE_FEATURES += "hbbtv-browser-webkit qtstalker"
 
 IMAGE_CLASSES  += "octagon-emmc_image"
 IMAGE_FSTYPES += "octagonemmc"

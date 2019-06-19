@@ -6,8 +6,6 @@ SRC = "20170227"
 
 inherit kernel machine_kernel_pr
 
-MACHINE_KERNEL_PR_append = ".1"
-
 KERNEL_RELEASE = "4.1.37"
 
 COMPATIBLE_MACHINE = "sf4008"

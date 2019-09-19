@@ -9,7 +9,7 @@ COMPATIBLE_MACHINE = "sf8008"
 
 RDEPENDS_${PN} = "harfbuzz"
 
-SRCDATE = "20190906"
+SRCDATE = "20190917"
 
 PV = "${SRCDATE}"
 
@@ -21,8 +21,8 @@ SRC_URI  = "http://source.mynonpublic.com/octagon/${MACHINE}-hihalt-${SRCDATE}.t
     file://suspend.sh \
 "
 
-SRC_URI[md5sum] = "cc30b5d1c739c3163062ec647b4847b0"
-SRC_URI[sha256sum] = "032b7f842537eeeb713a3755a09bca68abfcdf8996bb2d1d44b489997dd57e4a"
+SRC_URI[md5sum] = "bae519aa059c42c559469cf9ef16bcd7"
+SRC_URI[sha256sum] = "aa1616f08fe4b4c5e5431d5473bad6671e7b86958ca2a0be1373d79fee65199e"
 
 S = "${WORKDIR}"
 

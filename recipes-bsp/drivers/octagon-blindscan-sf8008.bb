@@ -5,7 +5,7 @@ LICENSE = "CLOSED"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "sf8008"
+COMPATIBLE_MACHINE = "^(sf8008)$"
 
 PROVIDES += "virtual/blindscan-dvbs"
 RPROVIDES_${PN} += "virtual/blindscan-dvbs"

@@ -5,7 +5,7 @@ RDEPENDS_${PN} = "ncurses"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-COMPATIBLE_MACHINE = "sf4008|sf5008"
+COMPATIBLE_MACHINE = "^(sf4008|sf5008)$"
 
 LICENSE = "CLOSED"
 require conf/license/license-close.inc

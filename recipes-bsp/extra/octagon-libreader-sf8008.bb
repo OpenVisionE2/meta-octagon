@@ -6,7 +6,7 @@ require conf/license/license-gplv2.inc
 
 PV = "1.0"
 
-COMPATIBLE_MACHINE = "sf8008"
+COMPATIBLE_MACHINE = "^(sf8008)$"
 
 SRC_URI = "file://octagon-libreader-sf8008.sh"
 

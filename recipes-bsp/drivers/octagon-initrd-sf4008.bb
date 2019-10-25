@@ -1,6 +1,6 @@
 SRCDATE = "20180108"
 
-COMPATIBLE_MACHINE = "sf4008"
+COMPATIBLE_MACHINE = "^(sf4008)$"
 
 require octagon-initrd.inc
 

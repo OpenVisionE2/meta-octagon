@@ -9,7 +9,7 @@ inherit deploy
 
 SRCDATE = "20190917"
 
-COMPATIBLE_MACHINE = "sf8008"
+COMPATIBLE_MACHINE = "^(sf8008)$"
 
 S = "${WORKDIR}/patitions"
 

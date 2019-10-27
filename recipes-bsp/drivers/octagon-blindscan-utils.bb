@@ -3,8 +3,6 @@ SECTION = "base"
 PRIORITY = "optional"
 RDEPENDS_${PN} = "ncurses"
 
-PACKAGE_ARCH = "${MACHINE_ARCH}"
-
 COMPATIBLE_MACHINE = "^(sf4008|sf5008)$"
 
 LICENSE = "CLOSED"

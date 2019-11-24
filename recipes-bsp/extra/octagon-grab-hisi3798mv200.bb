@@ -1,11 +1,9 @@
-SUMMARY = "grab for Octagon Model ${MACHINE}"
+SUMMARY = "grab for Octagon Model ${SOC_FAMILY}"
 SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"
 
-PACKAGE_ARCH = "${MACHINE_ARCH}"
-
-COMPATIBLE_MACHINE = "^(sf8008)$"
+COMPATIBLE_MACHINE = "^(sf8008|sf8008m)$"
 
 SRCDATE = "20180301"
 
@@ -15,7 +13,7 @@ RPROVIDES_${PN}  = "aio-grab"
 RREPLACES_${PN}  = "aio-grab"
 RCONFLICTS_${PN} = "aio-grab"
 
-SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-grab-${SRCDATE}.tar.gz"
+SRC_URI = "http://source.mynonpublic.com/octagon/${SOC_FAMILY}-grab-${SRCDATE}.tar.gz"
 
 SRC_URI[md5sum] = "4617805f460607e15a0f322ee25113c7"
 SRC_URI[sha256sum] = "a20b6a814f262c4cd2d18bdb74f2b718d921ff24fc07e66a032fec553072374e"

@@ -1,11 +1,9 @@
-SUMMARY = "blindscan for Octagon Model ${MACHINE}"
+SUMMARY = "blindscan for Octagon Model ${SOC_FAMILY}"
 SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"
 
-PACKAGE_ARCH = "${MACHINE_ARCH}"
-
-COMPATIBLE_MACHINE = "^(sf8008)$"
+COMPATIBLE_MACHINE = "^(sf8008|sf8008m)$"
 
 PROVIDES += "virtual/blindscan-dvbs"
 RPROVIDES_${PN} += "virtual/blindscan-dvbs"
@@ -14,7 +12,7 @@ SRCDATE = "20190305"
 
 PV = "${SRCDATE}"
 
-SRC_URI  = "http://source.mynonpublic.com/octagon/${MACHINE}-blindscan-${SRCDATE}.zip"
+SRC_URI  = "http://source.mynonpublic.com/octagon/${SOC_FAMILY}-blindscan-${SRCDATE}.zip"
 
 SRC_URI[md5sum] = "643ec0736a15f3aa16023772d1462a13"
 SRC_URI[sha256sum] = "c1c72d745d094c6b78203302e187e828e2293b72c804030c9246c296f63d4aa1"

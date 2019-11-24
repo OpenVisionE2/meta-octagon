@@ -1,11 +1,9 @@
-SUMMARY = "halt for Octagon Model ${MACHINE}"
+SUMMARY = "halt for Octagon Model ${SOC_FAMILY}"
 SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"
 
-PACKAGE_ARCH = "${MACHINE_ARCH}"
-
-COMPATIBLE_MACHINE = "^(sf8008)$"
+COMPATIBLE_MACHINE = "^(sf8008|sf8008m)$"
 
 RDEPENDS_${PN} = "harfbuzz"
 
@@ -17,7 +15,7 @@ INITSCRIPT_NAME = "suspend"
 INITSCRIPT_PARAMS = "start 89 0 ."
 inherit update-rc.d
 
-SRC_URI  = "http://source.mynonpublic.com/octagon/${MACHINE}-hihalt-${SRCDATE}.tar.gz \
+SRC_URI  = "http://source.mynonpublic.com/octagon/${SOC_FAMILY}-hihalt-${SRCDATE}.tar.gz \
     file://suspend.sh \
 "
 

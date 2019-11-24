@@ -8,7 +8,7 @@ SRCDATE = "20181224"
 
 inherit kernel machine_kernel_pr
 
-COMPATIBLE_MACHINE = "^(sf8008)$"
+COMPATIBLE_MACHINE = "^(sf8008|sf8008m)$"
 
 SRC_URI[md5sum] = "ad7eab17a5071a0d5f9ff44eb44e027d"
 SRC_URI[sha256sum] = "0654d5aa21c51eaea46f7203014afe60052ec0990a92b9e289e1ca8a2793907c"

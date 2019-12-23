@@ -52,12 +52,12 @@ IMAGE_CMD_tar_prepend = "\
     tar -cvf ${DEPLOY_DIR_IMAGE}/rootfs.tar -C ${IMAGE_ROOTFS} .; \
     mv ${DEPLOY_DIR_IMAGE}/rootfs.tar ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
     bzip2 ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
+    rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
     cd ${DEPLOY_DIR_IMAGE}; \
     zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.rootfs.tar.bz2; \
-    rm -f ${DEPLOY_DIR_IMAGE}/.tar.bz2; \
+    rm -f ${DEPLOY_DIR_IMAGE}/*.tar.bz2; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.manifest; \
-    rm -f ${DEPLOY_DIR_IMAGE}/.manifest; \
     rm -Rf ${IMAGEDIR}; \
 "
 

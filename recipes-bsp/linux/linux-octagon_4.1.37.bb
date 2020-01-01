@@ -36,6 +36,8 @@ SRC_URI += "http://source.mynonpublic.com/octagon/octagon-linux-${PV}-${SRC}.tar
     file://if_port.patch \
     file://t230c.patch \
     file://0001-media-Technisat-SkyStar-USB-HD-DVB-S-S2-too-much-URB.patch \
+    file://0002-makefile-disable-warnings.patch \
+    file://0003-uaccess-dont-mark-register-as-const.patch \
     "
 
 S = "${WORKDIR}/linux-${PV}"

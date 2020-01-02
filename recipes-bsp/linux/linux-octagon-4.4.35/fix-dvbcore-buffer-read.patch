@@ -1,0 +1,70 @@
+--- a/drivers/media/dvb-core/dmxdev.c	2020-01-02 14:31:14.361048805 +0800
++++ b/drivers/media/dvb-core/dmxdev.c	2020-01-02 14:33:13.534309243 +0800
+@@ -63,7 +63,6 @@
+ 				      int non_blocking, char __user *buf,
+ 				      size_t count, loff_t *ppos)
+ {
+-	size_t todo;
+ 	ssize_t avail;
+ 	ssize_t ret = 0;
+ 
+@@ -76,36 +75,32 @@
+ 		return ret;
+ 	}
+ 
+-	for (todo = count; todo > 0; todo -= ret) {
+-		if (non_blocking && dvb_ringbuffer_empty(src)) {
+-			ret = -EWOULDBLOCK;
+-			break;
+-		}
+-
+-		ret = wait_event_interruptible(src->queue,
+-					       !dvb_ringbuffer_empty(src) ||
+-					       (src->error != 0));
+-		if (ret < 0)
+-			break;
+-
+-		if (src->error) {
+-			ret = src->error;
+-			dvb_ringbuffer_flush(src);
+-			break;
+-		}
+-
+-		avail = dvb_ringbuffer_avail(src);
+-		if (avail > todo)
+-			avail = todo;
+-
+-		ret = dvb_ringbuffer_read_user(src, buf, avail);
+-		if (ret < 0)
+-			break;
++	if (non_blocking && dvb_ringbuffer_empty(src)) {
++		ret = -EWOULDBLOCK;
++		return ret;
++	}
+ 
+-		buf += ret;
++	ret = wait_event_interruptible(src->queue,
++				       !dvb_ringbuffer_empty(src) ||
++				       (src->error != 0));
++	if (ret < 0)
++		return ret;
++	
++	if (src->error) {
++		ret = src->error;
++		dvb_ringbuffer_flush(src);
++		return ret;
+ 	}
+ 
+-	return (count - todo) ? (count - todo) : ret;
++	avail = dvb_ringbuffer_avail(src);
++	if (avail > count)
++		avail = count;
++
++	ret = dvb_ringbuffer_read_user(src, buf, avail);
++	if (ret < 0)
++		return ret;
++
++	return ret;
+ }
+ 
+ static struct dmx_frontend *get_fe(struct dmx_demux *demux, int type)

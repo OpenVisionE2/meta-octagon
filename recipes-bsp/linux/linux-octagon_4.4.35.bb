@@ -33,10 +33,11 @@ SRC_URI += "http://source.mynonpublic.com/octagon/octagon-linux-${PV}-${SRCDATE}
     file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
     file://0003-dont-mark-register-as-const.patch \
     file://wifi-linux_4.4.183.patch \
+    file://fix-dvbcore-buffer-read.patch \
 "
 
 SRC_URI_append_sf8008m += " \
-	file://fix-index-for-usb.patch \
+    file://fix-index-for-usb.patch \
 "
 
 S = "${WORKDIR}/linux-${PV}"

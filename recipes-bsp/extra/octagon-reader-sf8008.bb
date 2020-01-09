@@ -8,14 +8,14 @@ RDEPENDS_${PN} = "libsdl"
 
 COMPATIBLE_MACHINE = "^(sf8008)$"
 
-SRCDATE = "20191011"
+SRCDATE = "20200108"
 
 PV = "${SRCDATE}"
 
-SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-libreader-${SRCDATE}.tar.gz"
+SRC_URI = "http://define-sw.dyndns.tv/openatv/openpli/${MACHINE}-libreader-${SRCDATE}.tar.gz"
 
-SRC_URI[md5sum] = "fed598319955dfc52d706e2cea9630e3"
-SRC_URI[sha256sum] = "583fff83bf4b10b084561aeef242ae5c9487ac624ce5d53dc4b676b302f88f41"
+SRC_URI[md5sum] = "4599e059a72a22a4125242fe7c930b6e"
+SRC_URI[sha256sum] = "ea2f80dfe7e3718a20bed52c75425ed47adaf06be2364ee394bd74b25c8ee39d"
 
 S = "${WORKDIR}"
 

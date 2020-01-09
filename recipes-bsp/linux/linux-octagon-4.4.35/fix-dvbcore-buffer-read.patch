@@ -1,14 +1,16 @@
---- a/drivers/media/dvb-core/dmxdev.c	2020-01-02 14:31:14.361048805 +0800
-+++ b/drivers/media/dvb-core/dmxdev.c	2020-01-02 14:33:13.534309243 +0800
-@@ -63,7 +63,6 @@
+diff -urN a/drivers/media/dvb-core/dmxdev.c b/drivers/media/dvb-core/dmxdev.c
+--- a/drivers/media/dvb-core/dmxdev.c	2020-01-08 15:11:57.106991787 +0800
++++ b/drivers/media/dvb-core/dmxdev.c	2020-01-08 15:13:35.587541188 +0800
+@@ -63,7 +63,7 @@
  				      int non_blocking, char __user *buf,
  				      size_t count, loff_t *ppos)
  {
 -	size_t todo;
++	//size_t todo;
  	ssize_t avail;
  	ssize_t ret = 0;
  
-@@ -76,36 +75,32 @@
+@@ -76,36 +76,32 @@
  		return ret;
  	}
  
@@ -43,9 +45,9 @@
 +	}
  
 -		buf += ret;
-+	ret = wait_event_interruptible(src->queue,
++	ret = wait_event_interruptible_timeout(src->queue,
 +				       !dvb_ringbuffer_empty(src) ||
-+				       (src->error != 0));
++				       (src->error != 0),msecs_to_jiffies(100));
 +	if (ret < 0)
 +		return ret;
 +	
@@ -68,3 +70,41 @@
  }
  
  static struct dmx_frontend *get_fe(struct dmx_demux *demux, int type)
+diff -urN a/drivers/media/dvb-core/dvb_demux.c b/drivers/media/dvb-core/dvb_demux.c
+--- a/drivers/media/dvb-core/dvb_demux.c	2020-01-08 15:11:57.106991787 +0800
++++ b/drivers/media/dvb-core/dvb_demux.c	2020-01-08 15:31:41.419103285 +0800
+@@ -31,6 +31,7 @@
+ #include <linux/crc32.h>
+ #include <asm/uaccess.h>
+ #include <asm/div64.h>
++#include "dmxdev.h"
+ 
+ #include "dvb_demux.h"
+ #include "dvb_ex.h"
+@@ -1300,6 +1301,26 @@
+ 			}
+ 
+ 		}
++		else if (feed->type == DMX_TYPE_TS && (feed->ts_type & TS_PACKET) && 
++			feed->pes_type == DMX_PES_OTHER)
++		{
++			struct dmx_ts_feed *tsfeed = &feed->feed.ts;
++			struct dmxdev_filter *dmxdevfilter = tsfeed->priv;
++			struct dvb_ringbuffer *buffer;
++			//int ret;
++			
++			if (dmxdevfilter->params.pes.output == DMX_OUT_TAP
++				|| dmxdevfilter->params.pes.output == DMX_OUT_TSDEMUX_TAP)
++			{
++				buffer = &dmxdevfilter->buffer;
++				if (dvb_ringbuffer_free(buffer) < count){
++					return 0;
++				}
++				else 
++					return 1;
++
++			}
++		}
+ 	}
+ 	
+ 	return 1;

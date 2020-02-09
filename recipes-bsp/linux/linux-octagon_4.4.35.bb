@@ -25,6 +25,7 @@ RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_
 
 SRC_URI += "http://source.mynonpublic.com/octagon/octagon-linux-${PV}-${SRCDATE}.tar.gz \
     file://defconfig \
+    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc9.patch \
     file://0001-remote.patch \
     file://HauppaugeWinTV-dualHD.patch \
     file://dib7000-linux_4.4.179.patch \
@@ -36,9 +37,7 @@ SRC_URI += "http://source.mynonpublic.com/octagon/octagon-linux-${PV}-${SRCDATE}
     file://fix-dvbcore-buffer-read.patch \
 "
 
-SRC_URI_append_sf8008m += " \
-    file://fix-index-for-usb.patch \
-"
+SRC_URI_append_sf8008m += "file://fix-index-for-usb.patch"
 
 S = "${WORKDIR}/linux-${PV}"
 B = "${WORKDIR}/build"

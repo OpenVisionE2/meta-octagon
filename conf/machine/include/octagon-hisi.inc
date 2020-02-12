@@ -28,7 +28,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     firmware-mt7601u \
 "
 
-MACHINE_FEATURES += "switchoff 7segment hdmicec textlcd emmc mmc blindscan-dvbs alsa"
+MACHINE_FEATURES += "switchoff 7segment hdmicec textlcd emmc mmc blindscan-dvbs alsa hisil"
 
 IMAGE_CLASSES  += "octagon-emmc_image"
 IMAGE_FSTYPES += "octagonemmc"

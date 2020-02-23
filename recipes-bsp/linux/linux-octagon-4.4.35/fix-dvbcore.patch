@@ -1,4 +1,4 @@
-diff -urN a/drivers/media/dvb-core/dmxdev.c b/drivers/media/dvb-core/dmxdev.c
+diff -uNr a/drivers/media/dvb-core/dmxdev.c b/drivers/media/dvb-core/dmxdev.c
 --- a/drivers/media/dvb-core/dmxdev.c	2020-01-08 15:11:57.106991787 +0800
 +++ b/drivers/media/dvb-core/dmxdev.c	2020-01-08 15:13:35.587541188 +0800
 @@ -63,7 +63,7 @@
@@ -70,9 +70,9 @@ diff -urN a/drivers/media/dvb-core/dmxdev.c b/drivers/media/dvb-core/dmxdev.c
  }
  
  static struct dmx_frontend *get_fe(struct dmx_demux *demux, int type)
-diff -urN a/drivers/media/dvb-core/dvb_demux.c b/drivers/media/dvb-core/dvb_demux.c
+diff -uNr a/drivers/media/dvb-core/dvb_demux.c b/drivers/media/dvb-core/dvb_demux.c
 --- a/drivers/media/dvb-core/dvb_demux.c	2020-01-08 15:11:57.106991787 +0800
-+++ b/drivers/media/dvb-core/dvb_demux.c	2020-01-08 15:31:41.419103285 +0800
++++ b/drivers/media/dvb-core/dvb_demux.c	2020-01-17 15:17:57.721708696 +0800
 @@ -31,6 +31,7 @@
  #include <linux/crc32.h>
  #include <asm/uaccess.h>
@@ -81,30 +81,30 @@ diff -urN a/drivers/media/dvb-core/dvb_demux.c b/drivers/media/dvb-core/dvb_demu
  
  #include "dvb_demux.h"
  #include "dvb_ex.h"
-@@ -1300,6 +1301,26 @@
- 			}
+@@ -1301,7 +1302,25 @@
  
  		}
-+		else if (feed->type == DMX_TYPE_TS && (feed->ts_type & TS_PACKET) && 
+ 	}
+-	
++		
++	list_for_each_entry(feed, &dvbdemux->feed_list, list_head) {
++		if (feed->type == DMX_TYPE_TS && (feed->ts_type & TS_PACKET) && 
 +			feed->pes_type == DMX_PES_OTHER)
 +		{
 +			struct dmx_ts_feed *tsfeed = &feed->feed.ts;
 +			struct dmxdev_filter *dmxdevfilter = tsfeed->priv;
 +			struct dvb_ringbuffer *buffer;
-+			//int ret;
 +			
-+			if (dmxdevfilter->params.pes.output == DMX_OUT_TAP
-+				|| dmxdevfilter->params.pes.output == DMX_OUT_TSDEMUX_TAP)
++			if (dmxdevfilter->params.pes.output == DMX_OUT_TSDEMUX_TAP)
 +			{
 +				buffer = &dmxdevfilter->buffer;
++
 +				if (dvb_ringbuffer_free(buffer) < count){
 +					return 0;
 +				}
-+				else 
-+					return 1;
-+
 +			}
 +		}
- 	}
- 	
++	}
  	return 1;
+ }
+ static int dvbdmx_write(struct dmx_demux *demux, const char __user *buf, size_t count)

@@ -1,5 +1,5 @@
 # We know about rtc
-include conf/machine/include/build-extras.inc
+require conf/machine/include/build-extras.inc
 
 DISTRO_FEATURES_remove = "x11 wayland"
 
@@ -54,7 +54,7 @@ MACHINE_EXTRA_RRECOMMENDS += "\
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
-include conf/machine/include/autoload-filesystems.inc
+require conf/machine/include/autoload-filesystems.inc
 require conf/machine/include/soc-family.inc
 
 DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-spark --with-wma --with-wmv --with-pcm --with-dts --with-eac3"

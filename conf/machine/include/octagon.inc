@@ -1,6 +1,8 @@
 # We know about rtc
 require conf/machine/include/build-extras.inc
 
+BOX_BRAND = "octagon"
+
 IMAGEDIR ?= "${MACHINE}"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\

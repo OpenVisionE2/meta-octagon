@@ -1,6 +1,8 @@
 # We know about rtc
 require conf/machine/include/build-extras.inc
 
+BOX_BRAND = "octagon"
+
 DISTRO_FEATURES_remove = "x11 wayland"
 
 IMAGEDIR = "octagon/${MACHINE}"

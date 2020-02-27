@@ -7,7 +7,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 PV = "${KV}+${SRCDATE}"
 
-SRC_URI = "http://define-sw.dyndns.tv/openatv/openpli/${MACHINE}-hiko-${SRCDATE}.zip \
+SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-hiko-${SRCDATE}.zip \
     file://modules \
 "
 

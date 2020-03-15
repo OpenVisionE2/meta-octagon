@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo extend rootfs to max size
+echo "extend rootfs to max size"
 resize2fs /dev/mmcblk0p13
 
 echo "libreader start!!!"

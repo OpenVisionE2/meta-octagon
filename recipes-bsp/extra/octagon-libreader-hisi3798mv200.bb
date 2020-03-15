@@ -7,7 +7,7 @@ PV = "1.0"
 
 COMPATIBLE_MACHINE = "^(sf8008|sf8008m)$"
 
-SRC_URI = "file://octagon-libreader-hisi3798mv200.sh"
+SRC_URI = "file://octagon-libreader-${MACHINE}.sh"
 
 INITSCRIPT_NAME = "octagon-libreader"
 INITSCRIPT_PARAMS = "start 05 S ."

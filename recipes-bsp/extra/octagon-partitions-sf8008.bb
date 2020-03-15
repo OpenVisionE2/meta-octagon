@@ -7,16 +7,16 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit deploy
 
-SRCDATE = "20191225"
+SRCDATE = "20200312"
 
 COMPATIBLE_MACHINE = "^(sf8008)$"
 
 S = "${WORKDIR}/patitions"
 
-SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-partitions-${SRCDATE}.zip"
+SRC_URI = "http://define-sw.dyndns.tv/openatv/openpli/${MACHINE}-partitions-${SRCDATE}.zip"
 
-SRC_URI[md5sum] = "02213d79b2d1d1a14476b0702bfcea25"
-SRC_URI[sha256sum] = "40facad26d573f1697391e92569b6871cfaa341edd7a7020a37581e91bf806d5"
+SRC_URI[md5sum] = "148db90533d1c5e22761bc947e6339e5"
+SRC_URI[sha256sum] = "7f87bd042036c40bd0bf69a646c62119812991f4afea68bfee38bfe9777bf2b2"
 
 ALLOW_EMPTY_${PN} = "1"
 do_configure[nostamp] = "1"

@@ -8,7 +8,7 @@ DISTRO_FEATURES_remove = "x11 wayland"
 IMAGEDIR = "octagon/${MACHINE}"
 
 MTD_KERNEL = "mmcblk0p12"
-
+MTD_ROOTFS = "mmcblk0p13"
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
 MTD_BLACK  = "mmcblk0"

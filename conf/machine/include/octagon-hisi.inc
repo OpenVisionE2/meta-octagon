@@ -60,3 +60,34 @@ require conf/machine/include/autoload-filesystems.inc
 require conf/machine/include/soc-family.inc
 
 DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-spark --with-wma --with-wmv --with-pcm --with-dts --with-eac3"
+
+IMAGE_CMD_octagonemmc_append = "\
+    mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
+    mkdir -p ${DEPLOY_DIR_IMAGE}/userdata; \
+    mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs1; \
+    mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs2; \
+    mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs3; \
+    mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs4; \
+    cp -a ${IMAGE_ROOTFS}/* ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs1/; \
+    mkfs.ext4 -F -i 4096 ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/rootfs.ext4 -d ${DEPLOY_DIR_IMAGE}/userdata; \
+    cd ${IMAGE_ROOTFS}; \
+    tar -cvf ${DEPLOY_DIR_IMAGE}/rootfs.tar -C ${IMAGE_ROOTFS} .; \
+    mv ${DEPLOY_DIR_IMAGE}/rootfs.tar ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
+    bzip2 ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
+    cp ${DEPLOY_DIR_IMAGE}/uImage ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
+    cp ${DEPLOY_DIR_IMAGE}/uImage ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/${KERNEL_FILE}; \
+    echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
+    cd ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions; \
+    mkupdate -s 00000003-00000001-01010101 -f ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/emmc_partitions.xml -d ${DEPLOY_DIR_IMAGE}/usb_update.bin; \
+    rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
+    cd ${DEPLOY_DIR_IMAGE}; \
+    cp ${IMGDEPLOYDIR}/${IMAGE_NAME}.rootfs.manifest ${IMAGE_NAME}_usb.zip.manifest; \
+    zip -j ${IMAGE_NAME}_recovery_emmc.zip ${DEPLOY_DIR_IMAGE}/usb_update.bin ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
+    zip ${IMAGE_NAME}_mmc.zip ${IMAGEDIR}/*; \
+    zip -j ${IMAGE_NAME}_mmc.zip ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/bootargs.bin ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/fastboot.bin ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/apploader.bin; \
+    rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
+    rm -f ${DEPLOY_DIR_IMAGE}/*.json; \
+    rm -Rf ${DEPLOY_DIR_IMAGE}/usb_update.bin; \
+    rm -Rf ${IMAGEDIR}; \
+    rm -Rf ${DEPLOY_DIR_IMAGE}/userdata; \
+    "

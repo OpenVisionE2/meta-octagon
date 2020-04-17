@@ -1,4 +1,4 @@
-SUMMARY = "halt for Octagon Model ${SOC_FAMILY}"
+SUMMARY = "halt for ${MACHINE}"
 SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"

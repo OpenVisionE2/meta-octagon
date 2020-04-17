@@ -1,4 +1,4 @@
-SUMMARY = "grab for Octagon Model ${SOC_FAMILY}"
+SUMMARY = "grab for ${MACHINE}"
 SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"

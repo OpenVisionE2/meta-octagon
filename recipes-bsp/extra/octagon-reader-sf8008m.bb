@@ -1,4 +1,4 @@
-SUMMARY = "libreader for Octagon Model ${MACHINE}"
+SUMMARY = "libreader for ${MACHINE}"
 SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"

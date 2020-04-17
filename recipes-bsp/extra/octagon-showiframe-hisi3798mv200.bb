@@ -1,4 +1,4 @@
-SUMMARY = "showiframe for Octagon Model ${SOC_FAMILY}"
+SUMMARY = "showiframe for ${MACHINE}"
 SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"

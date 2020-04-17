@@ -1,4 +1,4 @@
-SUMMARY = "blindscan for Octagon Model ${SOC_FAMILY}"
+SUMMARY = "blindscan for ${MACHINE}"
 SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"

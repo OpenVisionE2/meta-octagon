@@ -1,4 +1,4 @@
-SUMMARY = "SF8008m partitions files"
+SUMMARY = "${MACHINE} partitions files"
 SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"

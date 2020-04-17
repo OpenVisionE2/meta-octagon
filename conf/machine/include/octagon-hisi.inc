@@ -1,5 +1,5 @@
 # We know about rtc
-require conf/machine/include/build-extras.inc
+MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 BOX_BRAND = "octagon"
 
@@ -56,7 +56,8 @@ MACHINE_EXTRA_RRECOMMENDS += "\
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
-require conf/machine/include/autoload-filesystems.inc
+KERNEL_MODULE_AUTOLOAD += "xfs"
+
 require conf/machine/include/soc-family.inc
 
 DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-spark --with-wma --with-wmv --with-pcm --with-dts --with-eac3"

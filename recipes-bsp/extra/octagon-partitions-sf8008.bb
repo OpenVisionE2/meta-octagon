@@ -7,7 +7,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit deploy
 
-SRCDATE = "20200413"
+SRCDATE = "20200417"
 
 COMPATIBLE_MACHINE = "^(sf8008)$"
 
@@ -15,8 +15,8 @@ S = "${WORKDIR}/patitions"
 
 SRC_URI = "http://define-sw.dyndns.tv/openatv/openpli/${MACHINE}-partitions-${SRCDATE}.zip"
 
-SRC_URI[md5sum] = "6c9d612d1e0ac52b2123b4dfa4c10802"
-SRC_URI[sha256sum] = "481bdf8c276ab81daba9bd9ba7e79bdbfa167fd32d20873e80539fa711a515a9"
+SRC_URI[md5sum] = "1d1217eb58a538f87761934e81969bcd"
+SRC_URI[sha256sum] = "59d6bb76fc14014132d1701c0b4643a34401df2509e872628554bfb5c5a42ab9"
 
 ALLOW_EMPTY_${PN} = "1"
 do_configure[nostamp] = "1"

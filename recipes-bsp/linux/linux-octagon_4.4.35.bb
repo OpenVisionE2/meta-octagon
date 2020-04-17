@@ -30,7 +30,7 @@ SRC_URI += "http://source.mynonpublic.com/octagon/octagon-linux-${PV}-${SRCDATE}
     file://HauppaugeWinTV-dualHD.patch \
     file://dib7000-linux_4.4.179.patch \
     file://dvb-usb-linux_4.4.179.patch \
-    ${@bb.utils.contains("MACHINE", "gbtrio4k", "file://initramfs-subdirboot.cpio.gz;unpack=0", "", d)} \
+    file://initramfs-subdirboot.cpio.gz;unpack=0 \
     file://findkerneldevice.py \
     file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
     file://0003-dont-mark-register-as-const.patch \
@@ -52,7 +52,7 @@ FILES_${KERNEL_PACKAGE_NAME}-image = "/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} /
 KERNEL_IMAGETYPE = "uImage"
 KERNEL_OUTPUT = "arch/${ARCH}/boot/${KERNEL_IMAGETYPE}"
 
-kernel_do_configure_prepend_sf8008() {
+kernel_do_configure_prepend() {
 	install -d ${B}/usr
 	install -m 0644 ${WORKDIR}/initramfs-subdirboot.cpio.gz ${B}/
 }

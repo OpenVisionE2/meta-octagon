@@ -5,18 +5,23 @@ LICENSE = "CLOSED"
 require conf/license/license-close.inc
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-inherit deploy
+inherit deploy update-rc.d
 
-SRCDATE = "20200417"
+SRCDATE = "20200423"
 
 COMPATIBLE_MACHINE = "^(sf8008)$"
 
 S = "${WORKDIR}/patitions"
 
-SRC_URI = "http://define-sw.dyndns.tv/openatv/openpli/${MACHINE}-partitions-${SRCDATE}.zip"
+SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-partitions-${SRCDATE}.zip \
+  file://flash-apploader \
+"
 
-SRC_URI[md5sum] = "1d1217eb58a538f87761934e81969bcd"
-SRC_URI[sha256sum] = "59d6bb76fc14014132d1701c0b4643a34401df2509e872628554bfb5c5a42ab9"
+INITSCRIPT_NAME = "flash-apploader"
+INITSCRIPT_PARAMS = "start 90 S ."
+
+SRC_URI[md5sum] = "f3a741c163658f168a83c5f7ddda3250"
+SRC_URI[sha256sum] = "5a41292131c81a8b45a5d266f3ed3dbf90fedea47b3acc9274005185da0a24a3"
 
 ALLOW_EMPTY_${PN} = "1"
 do_configure[nostamp] = "1"
@@ -26,9 +31,11 @@ do_install() {
     install -m 0644 ${S}/bootargs.bin ${D}${datadir}/bootargs.bin
     install -m 0644 ${S}/fastboot.bin ${D}${datadir}/fastboot.bin
     install -m 0644 ${S}/apploader.bin ${D}${datadir}/apploader.bin
+    install -m 0755 -d ${D}${sysconfdir}/init.d
+    install -m 0755 ${WORKDIR}/flash-apploader ${D}${sysconfdir}/init.d/flash-apploader
 }
 
-FILES_${PN} = "${datadir}"
+FILES_${PN} = "${datadir} ${sysconfdir}"
 
 do_deploy() {
     install -d ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions

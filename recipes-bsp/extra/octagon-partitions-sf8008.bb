@@ -7,7 +7,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit deploy update-rc.d
 
-SRCDATE = "20200423"
+SRCDATE = "20200428"
 
 COMPATIBLE_MACHINE = "^(sf8008)$"
 
@@ -20,8 +20,8 @@ SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-partitions-${SRCDATE
 INITSCRIPT_NAME = "flash-apploader"
 INITSCRIPT_PARAMS = "start 90 S ."
 
-SRC_URI[md5sum] = "f3a741c163658f168a83c5f7ddda3250"
-SRC_URI[sha256sum] = "5a41292131c81a8b45a5d266f3ed3dbf90fedea47b3acc9274005185da0a24a3"
+SRC_URI[md5sum] = "1e1a1abf1db714f80d722a6c608cb57f"
+SRC_URI[sha256sum] = "224e580204d19607d9bdf5e6675b7c69fec527296e44aa7512044f04ba4f15ca"
 
 ALLOW_EMPTY_${PN} = "1"
 do_configure[nostamp] = "1"

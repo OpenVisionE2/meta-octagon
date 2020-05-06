@@ -21,5 +21,5 @@ do_compile() {
 
 do_install() {
     install -d ${D}${sysconfdir}/init.d/
-    install -m 0755 ${WORKDIR}/octagon-libreader-hisi3798mv200.sh ${D}${sysconfdir}/init.d/octagon-libreader
+    install -m 0755 ${WORKDIR}/octagon-libreader-${MACHINE}.sh ${D}${sysconfdir}/init.d/octagon-libreader
 }

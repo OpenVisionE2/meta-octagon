@@ -64,13 +64,7 @@ DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-spark --with-wma
 
 IMAGE_CMD_octagonemmc_append = "\
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
-    mkdir -p ${DEPLOY_DIR_IMAGE}/userdata; \
-    mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs1; \
-    mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs2; \
-    mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs3; \
-    mkdir -p ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs4; \
-    cp -a ${IMAGE_ROOTFS}/* ${DEPLOY_DIR_IMAGE}/userdata/linuxrootfs1/; \
-    mkfs.ext4 -F -i 4096 ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/rootfs.ext4 -d ${DEPLOY_DIR_IMAGE}/userdata; \
+    mv ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ext4 ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/rootfs.ext4; \
     cd ${IMAGE_ROOTFS}; \
     tar -cvf ${DEPLOY_DIR_IMAGE}/rootfs.tar -C ${IMAGE_ROOTFS} .; \
     mv ${DEPLOY_DIR_IMAGE}/rootfs.tar ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/rootfs.tar; \
@@ -88,5 +82,4 @@ IMAGE_CMD_octagonemmc_append = "\
     rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
     rm -Rf ${DEPLOY_DIR_IMAGE}/usb_update.bin; \
     rm -Rf ${IMAGEDIR}; \
-    rm -Rf ${DEPLOY_DIR_IMAGE}/userdata; \
     "

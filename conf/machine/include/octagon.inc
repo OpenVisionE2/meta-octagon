@@ -28,7 +28,7 @@ DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts=no --with-dts
 
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
-IMAGE_FSTYPES =+ "tar.bz2"
+IMAGE_FSTYPES += "tar.bz2"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-octagon"
 PREFERRED_VERSION_directfb = "1.7.7"

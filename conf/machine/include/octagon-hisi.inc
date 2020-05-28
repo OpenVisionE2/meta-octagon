@@ -45,7 +45,6 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbs = "octagon-blindscan-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_showiframe = "octagon-showiframe-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_aio-grab = "octagon-grab-${SOC_FAMILY}"
 PREFERRED_PROVIDER_virtual/enigma2-mediaservice ?= "enigma2-plugin-systemplugins-servicehisilicon"
-PREFERRED_VERSION_ffmpeg = "3.4.2"
 
 require conf/machine/include/tune-cortexa15.inc
 

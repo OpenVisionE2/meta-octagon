@@ -39,6 +39,6 @@ do_install() {
 do_package_qa() {
 }
 
-FILES_${PN}  = "${bindir}/hihalt ${sysconfdir}/init.d"
+FILES_${PN}  = "${bindir}/hihalt ${sysconfdir}/init.d /usr/script"
 
 

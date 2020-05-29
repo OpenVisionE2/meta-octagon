@@ -25,7 +25,7 @@ RPROVIDES_${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_
 
 SRC_URI += "http://source.mynonpublic.com/octagon/octagon-linux-${PV}-${SRC}.tar.xz \
     file://defconfig \
-    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc9.patch \
+    file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
     file://0001-Support-TBS-USB-drivers-for-4.6-kernel.patch \
     file://0001-TBS-fixes-for-4.6-kernel.patch \
     file://0001-STV-Add-PLS-support.patch \

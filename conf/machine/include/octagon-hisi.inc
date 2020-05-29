@@ -13,6 +13,9 @@ KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
 MTD_BLACK  = "mmcblk0"
 
+SOC_FAMILY = "hisi3798mv200"
+HICHIPSET = "3798mv200"
+
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     octagon-dvb-modules-${MACHINE} \
     octagon-loadmodules-${SOC_FAMILY} \ 
@@ -21,6 +24,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     octagon-reader-${MACHINE} \
     octagon-libreader-${SOC_FAMILY} \
     octagon-partitions-${MACHINE} \
+    octagon-tntfs-${HICHIPSET} \
     e2fsprogs-resize2fs \
     gptfdisk \
     rtl8192eu \
@@ -30,7 +34,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     ${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'partitions-by-name' , '', d)} \
 "
 
-MACHINE_FEATURES += "switchoff 7segment hdmicec textlcd emmc mmc blindscan-dvbs alsa hisil"
+MACHINE_FEATURES += "switchoff 7segment hdmicec textlcd emmc mmc blindscan-dvbs alsa hisil multitranscoding"
 
 IMAGE_CLASSES  += "octagon-emmc_image"
 IMAGE_FSTYPES += "octagonemmc"
@@ -45,7 +49,6 @@ PREFERRED_PROVIDER_virtual/blindscan-dvbs = "octagon-blindscan-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_showiframe = "octagon-showiframe-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_aio-grab = "octagon-grab-${SOC_FAMILY}"
 PREFERRED_PROVIDER_virtual/enigma2-mediaservice ?= "enigma2-plugin-systemplugins-servicehisilicon"
-PREFERRED_VERSION_ffmpeg = "3.4.2"
 
 require conf/machine/include/tune-cortexa15.inc
 
@@ -61,6 +64,8 @@ KERNEL_MODULE_AUTOLOAD += "xfs"
 require conf/machine/include/soc-family.inc
 
 DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-spark --with-wma --with-wmv --with-pcm --with-dts --with-eac3"
+
+EXTRA_OECONF_append_pn-enigma2 = "--with-lcddev=/dev/null --with-alphablendingacceleration=always --with-blitaccelerationthreshold=250 --with-fillaccelerationthreshold=190000 --with-subttxtabnormalptsdiffs=3600000"
 
 IMAGE_CMD_octagonemmc_append = "\
     mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \

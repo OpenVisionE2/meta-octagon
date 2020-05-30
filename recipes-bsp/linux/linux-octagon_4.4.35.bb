@@ -6,7 +6,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 KERNEL_RELEASE = "4.4.35"
 SRCDATE = "20181224"
 
-inherit kernel machine_kernel_pr
+inherit kernel machine_kernel_pr samba_change_dialect
 
 COMPATIBLE_MACHINE = "^(sf8008|sf8008m)$"
 

@@ -27,7 +27,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     octagon-tntfs-${HICHIPSET} \
     e2fsprogs-resize2fs \
     gptfdisk \
-    rtl8192eu \
+    kernel-module-extrawlan-rtl8192eu \
     firmware-rtl8192eu \
     kernel-module-mt7601u \
     firmware-mt7601u \

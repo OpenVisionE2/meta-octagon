@@ -13,10 +13,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "\
-	kernel-module-cdfs \
-    "
-
 MACHINE_EXTRA_RRECOMMENDS += "\
     gstreamer1.0-plugin-dvbmediasink \
     gstreamer1.0-libav \

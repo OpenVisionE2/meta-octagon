@@ -2,7 +2,7 @@ require octagon-reader.inc
 
 COMPATIBLE_MACHINE = "^(sf8008)$"
 
-SRCDATE = "20200227"
+SRCDATE = "20200612"
 
-SRC_URI[md5sum] = "636bf340515819ff688adbe90ffb8c9d"
-SRC_URI[sha256sum] = "7ce70894f4de4564bb7926ba077e2f45a6cb16e9ffb9780e4e473b7fcd05a73f"
+SRC_URI[md5sum] = "ae16a0d383d9ebb318f3609d75a9705f"
+SRC_URI[sha256sum] = "6da9920cfcbed6893cb81e8cd5137d374ce36fe41146a05a53ff0e3ac10d8574"

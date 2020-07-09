@@ -3,8 +3,6 @@ MAINTAINER = "octagon"
 
 require conf/license/license-gplv2.inc
 
-PV = "1.0"
-
 COMPATIBLE_MACHINE = "^(sf8008|sf8008m)$"
 
 SRC_URI = "file://octagon-libreader-${MACHINE}.sh"

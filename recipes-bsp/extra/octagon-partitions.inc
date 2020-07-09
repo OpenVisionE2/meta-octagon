@@ -7,6 +7,8 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit deploy update-rc.d
 
+PV = "${SRCDATE}"
+
 S = "${WORKDIR}/patitions"
 
 SRC_URI = "http://source.mynonpublic.com/octagon/${MACHINE}-partitions-${SRCDATE}.zip \

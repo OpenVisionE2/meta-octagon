@@ -3,8 +3,6 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 BOX_BRAND = "octagon"
 
-IMAGEDIR ?= "${MACHINE}"
-
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     octagon-dvb-modules-${MACHINE} \
     octagon-initrd-${MACHINE} \

@@ -1,4 +1,3 @@
-KV = "4.4.35"
 SRCDATE = "20200703"
 
 require octagon-dvb-modules-hisi.inc

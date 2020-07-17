@@ -25,10 +25,10 @@ do_populate_sysroot() {
 }
 
 do_install() {
-    install -d ${D}/lib/modules/${KV}/extra
+    install -d ${D}${base_libdir}/modules/${KV}/extra
     install -d ${D}${sysconfdir}/modules-load.d
     install -m 0755 ${S}/tntfs.ko ${D}${base_libdir}/modules/${KV}/extra
     echo tntfs >> ${D}${sysconfdir}/modules-load.d/tntfs.conf
 }
 
-FILES_${PN} += "${sysconfdir}/modules-load.d/tntfs.conf /lib/modules/${KV}/extra"
+FILES_${PN} += "${sysconfdir}/modules-load.d/tntfs.conf ${base_libdir}/modules/${KV}/extra"

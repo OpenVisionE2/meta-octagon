@@ -3,7 +3,7 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 BOX_BRAND = "octagon"
 
-DISTRO_FEATURES_remove = "x11 wayland"
+DISTRO_FEATURES_remove += "x11 wayland"
 
 IMAGEDIR = "octagon/${MACHINE}"
 
@@ -34,7 +34,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
     ${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'partitions-by-name' , '', d)} \
 "
 
-MACHINE_FEATURES += "switchoff 7segment hdmicec textlcd emmc mmc blindscan-dvbs alsa hisil multitranscoding"
+MACHINE_FEATURES += "switchoff 7segment hdmicec textlcd emmc mmc blindscan-dvbs alsa hisil multitranscoding HDMI AV_JACK"
 
 IMAGE_CLASSES  += "octagon-emmc_image"
 IMAGE_FSTYPES += "octagonemmc"
@@ -48,7 +48,7 @@ PREFERRED_VERSION_linux-octagon = "4.4.35"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "octagon-blindscan-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_showiframe = "octagon-showiframe-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_aio-grab = "octagon-grab-${SOC_FAMILY}"
-PREFERRED_PROVIDER_virtual/enigma2-mediaservice ?= "enigma2-plugin-systemplugins-servicehisilicon"
+PREFERRED_PROVIDER_virtual/enigma2-mediaservice = "enigma2-plugin-systemplugins-servicehisilicon"
 
 require conf/machine/include/tune-cortexa15.inc
 

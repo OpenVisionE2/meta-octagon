@@ -3,8 +3,6 @@ SECTION = "base"
 PRIORITY = "optional"
 RDEPENDS_${PN} = "ncurses"
 
-COMPATIBLE_MACHINE = "^(sf4008|sf5008)$"
-
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
 

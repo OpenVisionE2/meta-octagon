@@ -88,3 +88,5 @@ IMAGE_CMD_octagonemmc_append = "\
     rm -Rf ${DEPLOY_DIR_IMAGE}/usb_update.bin; \
     rm -Rf ${IMAGEDIR}; \
     "
+
+STB_PLATFORM = "octagonhisil"

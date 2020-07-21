@@ -3,8 +3,6 @@ SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"
 
-COMPATIBLE_MACHINE = "^(sf8008|sf8008m)$"
-
 PROVIDES += "virtual/blindscan-dvbs"
 RPROVIDES_${PN} += "virtual/blindscan-dvbs"
 
@@ -34,3 +32,5 @@ INHIBIT_PACKAGE_STRIP = "1"
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 do_compile[noexec] = "1"
 deltask do_populate_sysroot
+
+BLINDSCAN_BINARY = "octagon-blindscan"

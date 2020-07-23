@@ -68,7 +68,7 @@ kernel_do_install_append() {
 	install -m 0755 ${WORKDIR}/findkerneldevice.sh ${D}/${KERNEL_IMAGEDEST}
 }
 
-pkg_postinst_kernel-image () {
+pkg_postinst_${KERNEL_PACKAGE_NAME}-image () {
     if [ "x$D" == "x" ]; then
         if [ -f /${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE} ] ; then
             /${KERNEL_IMAGEDEST}/./findkerneldevice.sh

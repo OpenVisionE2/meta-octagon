@@ -60,7 +60,6 @@ MACHINE_EXTRA_RRECOMMENDS += "\
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
 
-KERNEL_MODULE_AUTOLOAD += "xfs"
 
 require conf/machine/include/soc-family.inc
 

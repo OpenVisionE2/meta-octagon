@@ -16,7 +16,6 @@ MACHINE_EXTRA_RRECOMMENDS += "\
     gstreamer1.0-libav \
     "
 
-KERNEL_MODULE_AUTOLOAD += "xfs"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts=no --with-dtsdownmix --with-eac3 --with-h265 --with-vb6 --with-vb8 --with-vb9 --with-spark"
 

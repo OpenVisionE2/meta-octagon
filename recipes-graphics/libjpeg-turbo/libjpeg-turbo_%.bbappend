@@ -1,12 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-SRC_URI_append_sf8008 += " \
-     file://libjpeg.so.62.2.0 \
-"
+SRC_URI_append_sf8008 = " file://libjpeg.so.62.2.0"
 
-SRC_URI_append_sf8008m += " \
-     file://libjpeg.so.62.2.0 \
-"
+SRC_URI_append_sf8008m = " file://libjpeg.so.62.2.0"
 
 do_install_append_sf8008() {
         install -d ${D}${libdir}

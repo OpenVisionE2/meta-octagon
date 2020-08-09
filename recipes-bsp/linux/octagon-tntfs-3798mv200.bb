@@ -6,7 +6,7 @@ require conf/license/license-close.inc
 
 COMPATIBLE_MACHINE = "^(sf8008|sf8008m)$"
 
-KV = "4.4.35"
+KV = "${KERNELVERSION}"
 SRCDATE = "20200528"
 
 SRC_URI[md5sum] = "4841409cb7dd8e2104f101d6f70d7aef"

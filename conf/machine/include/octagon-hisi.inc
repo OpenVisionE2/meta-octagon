@@ -1,6 +1,8 @@
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
+KERNELVERSION = "4.4.35"
+
 BOX_BRAND = "octagon"
 
 DISTRO_FEATURES_remove += "x11 wayland"
@@ -18,22 +20,22 @@ HICHIPSET = "3798mv200"
 CHIPSET = "Hi3798Mv200"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
-    octagon-dvb-modules-${MACHINE} \
-    octagon-loadmodules-${SOC_FAMILY} \ 
-    octagon-libs-${MACHINE} \
-    octagon-hihalt-${SOC_FAMILY} \
-    octagon-reader-${MACHINE} \
-    octagon-libreader-${SOC_FAMILY} \
-    octagon-partitions-${MACHINE} \
-    octagon-tntfs-${HICHIPSET} \
-    e2fsprogs-resize2fs \
-    gptfdisk \
-    kernel-module-extrawlan-rtl8192eu \
-    firmware-rtl8192eu \
-    kernel-module-mt7601u \
-    firmware-mt7601u \
-    ${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'partitions-by-name' , '', d)} \
-"
+	octagon-dvb-modules-${MACHINE} \
+	octagon-loadmodules-${SOC_FAMILY} \ 
+	octagon-libs-${MACHINE} \
+	octagon-hihalt-${SOC_FAMILY} \
+	octagon-reader-${MACHINE} \
+	octagon-libreader-${SOC_FAMILY} \
+	octagon-partitions-${MACHINE} \
+	octagon-tntfs-${HICHIPSET} \
+	e2fsprogs-resize2fs \
+	gptfdisk \
+	kernel-module-extrawlan-rtl8192eu \
+	firmware-rtl8192eu \
+	kernel-module-mt7601u \
+	firmware-mt7601u \
+	${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'partitions-by-name' , '', d)} \
+	"
 
 MACHINE_FEATURES += "switchoff 7segment hdmicec textlcd emmc mmc blindscan-dvbs alsa hisil multitranscoding HDMI AV_JACK vfdsymbol"
 
@@ -45,7 +47,7 @@ TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-octagon"
-PREFERRED_VERSION_linux-octagon = "4.4.35"
+PREFERRED_VERSION_linux-octagon = "${KERNELVERSION}"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "octagon-blindscan-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_showiframe = "octagon-showiframe-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_aio-grab = "octagon-grab-${SOC_FAMILY}"
@@ -54,12 +56,11 @@ PREFERRED_PROVIDER_virtual/enigma2-mediaservice = "enigma2-plugin-systemplugins-
 require conf/machine/include/tune-cortexa15.inc
 
 MACHINE_EXTRA_RRECOMMENDS += "\
-    gstreamer1.0-plugin-dvbmediasink \
-    "
+	gstreamer1.0-plugin-dvbmediasink \
+	"
 
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"
-
 
 require conf/machine/include/soc-family.inc
 

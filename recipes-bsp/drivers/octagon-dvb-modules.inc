@@ -6,7 +6,6 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "${MACHINE}"
 
-KV = "${KERNELVERSION}"
 
 PV = "${KV}+${SRCDATE}"
 

@@ -93,3 +93,5 @@ IMAGE_CMD_octagonemmc_append = " \
 STB_PLATFORM = "octagonhisil"
 
 EXTRA_ALSA = "mv200"
+
+BLINDSCAN_BINARY = "octagon-blindscan"

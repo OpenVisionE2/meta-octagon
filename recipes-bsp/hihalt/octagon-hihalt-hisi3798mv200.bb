@@ -28,12 +28,12 @@ S = "${WORKDIR}"
 
 do_install() {
     install -d ${D}${bindir}
-    install -m 0755 ${S}/hihalt ${D}/${bindir}
+    install -m 0755 ${S}/hihalt ${D}${bindir}
     install -d ${D}${sysconfdir}/init.d
     install -m 0755 ${S}/suspend.sh ${D}${sysconfdir}/init.d/suspend
-    install -d ${D}/usr/script
-    install -m 0755 ${S}/standby_leave.sh ${D}/usr/script/standby_leave.sh
-    install -m 0755 ${S}/standby_enter.sh ${D}/usr/script/standby_enter.sh
+    install -d ${D}${prefix}/script
+    install -m 0755 ${S}/standby_leave.sh ${D}${prefix}/script/standby_leave.sh
+    install -m 0755 ${S}/standby_enter.sh ${D}${prefix}/script/standby_enter.sh
 }
 
 do_package_qa() {

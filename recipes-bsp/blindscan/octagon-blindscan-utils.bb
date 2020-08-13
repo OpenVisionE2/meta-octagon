@@ -23,8 +23,8 @@ S = "${WORKDIR}/"
 FILES_octagon-blindscan-dvbc-utils = "${bindir}/tda1002x"
 
 do_install() {
-    install -d ${D}/${bindir}/
-    install -m 0755 "${S}/tda1002x" "${D}/${bindir}"
+    install -d ${D}${bindir}/
+    install -m 0755 "${S}/tda1002x" "${D}${bindir}"
 }
 
 do_prepare_recipe_sysroot[noexec] = "1"

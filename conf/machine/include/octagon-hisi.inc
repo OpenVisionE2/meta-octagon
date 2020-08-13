@@ -95,3 +95,5 @@ STB_PLATFORM = "octagonhisil"
 EXTRA_ALSA = "mv200"
 
 BLINDSCAN_BINARY = "octagon-blindscan"
+
+RCNAME = "sf8008"

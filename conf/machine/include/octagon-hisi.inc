@@ -35,6 +35,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	kernel-module-mt7601u \
 	firmware-mt7601u \
 	${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'partitions-by-name' , '', d)} \
+	gstreamer1.0-plugin-dvbmediasink \
 	"
 
 MACHINE_FEATURES += "switchoff 7segment hdmicec textlcd emmc mmc blindscan-dvbs alsa hisil multitranscoding HDMI AV_JACK vfdsymbol"
@@ -54,10 +55,6 @@ PREFERRED_RPROVIDER_aio-grab = "octagon-grab-${SOC_FAMILY}"
 PREFERRED_PROVIDER_virtual/enigma2-mediaservice = "enigma2-plugin-systemplugins-servicehisilicon"
 
 require conf/machine/include/tune-cortexa15.inc
-
-MACHINE_EXTRA_RRECOMMENDS += "\
-	gstreamer1.0-plugin-dvbmediasink \
-	"
 
 DVBPROVIDER = "kernel"
 DVBSKYPROVIDER = "kernel"

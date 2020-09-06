@@ -3,6 +3,8 @@ SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 PROVIDES += "virtual/blindscan-dvbs"
 RPROVIDES_${PN} += "virtual/blindscan-dvbs"
 

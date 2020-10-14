@@ -18,7 +18,7 @@ SRC_URI[sha256sum] = "d9aac4908e691e4be732a1325bfd3a542c41e8cc83d6447d260668234b
 
 PV = "1.1"
 
-S = "${WORKDIR}/"
+S = "${WORKDIR}"
 
 FILES_octagon-blindscan-dvbc-utils = "${bindir}/tda1002x"
 

@@ -1,8 +1,8 @@
-SRCDATE = "20200703"
+SRCDATE = "20201119"
 
 require octagon-dvb-modules-hisi.inc
 
 COMPATIBLE_MACHINE = "^(sf8008m)$"
 
-SRC_URI[md5sum] = "9291682b98e7eeb8927f01d2bc4db801"
-SRC_URI[sha256sum] = "f12ea53f6e036f5d32ac8cd7dadc8e12283e646f6e3c76c69f4626e81869b1c2"
+SRC_URI[md5sum] = "05335786b35cbfaf962c24637e5fc204"
+SRC_URI[sha256sum] = "86726ef62398ad45cf490ffec8b6ac8f0e023fc86ac1d04bff1c5f5c60ae1168"

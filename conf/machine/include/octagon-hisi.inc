@@ -27,7 +27,6 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	octagon-reader-${MACHINE} \
 	octagon-libreader-${SOC_FAMILY} \
 	octagon-partitions-${MACHINE} \
-	octagon-tntfs-${HICHIPSET} \
 	e2fsprogs-resize2fs \
 	gptfdisk \
 	kernel-module-extrawlan-rtl8192eu \

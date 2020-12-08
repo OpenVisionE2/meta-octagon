@@ -30,6 +30,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	e2fsprogs-resize2fs \
 	gptfdisk \
 	kernel-module-extrawlan-rtl8192eu \
+	kernel-module-extrawlan-rtl8822cu \
 	firmware-rtl8192eu \
 	kernel-module-mt7601u \
 	firmware-mt7601u \

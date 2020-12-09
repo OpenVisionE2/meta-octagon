@@ -6,7 +6,6 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "${MACHINE}"
 
-
 PV = "${KV}+${SRCDATE}"
 
 GCCREV = "6.3.0"
@@ -18,9 +17,6 @@ S = "${WORKDIR}"
 INHIBIT_PACKAGE_STRIP = "1"
 
 do_compile() {
-}
-
-do_populate_sysroot() {
 }
 
 do_install() {

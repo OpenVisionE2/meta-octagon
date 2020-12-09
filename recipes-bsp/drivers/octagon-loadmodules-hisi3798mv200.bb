@@ -18,6 +18,6 @@ do_compile() {
 }
 
 do_install() {
-    install -d ${D}${sysconfdir}/init.d/
-    install -m 0755 ${WORKDIR}/octagon-loadmodules-hisi3798mv200.sh ${D}${sysconfdir}/init.d/octagon-loadmodules
+	install -d ${D}${sysconfdir}/init.d/
+	install -m 0755 ${WORKDIR}/octagon-loadmodules-hisi3798mv200.sh ${D}${sysconfdir}/init.d/octagon-loadmodules
 }

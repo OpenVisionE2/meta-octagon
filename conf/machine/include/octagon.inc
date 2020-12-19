@@ -33,8 +33,8 @@ MTD_BLACK  = "mmcblk0"
 
 IMAGE_CMD_tar_prepend = "\
 	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
-	cp ${DEPLOY_DIR_IMAGE}/${MACHINE}_update.bin ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/update.bin; \
-	cp ${DEPLOY_DIR_IMAGE}/zImage ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
+	cp -f ${DEPLOY_DIR_IMAGE}/${MACHINE}_update.bin ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/update.bin; \
+	cp -f ${DEPLOY_DIR_IMAGE}/zImage ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
 	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
 	echo "rename this file to 'force' to force an update without confirmation" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/noforce; \
 	echo "this file enable kernel update" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/partition.update; \

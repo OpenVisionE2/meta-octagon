@@ -4,5 +4,5 @@ require octagon-dvb-modules-hisi.inc
 
 COMPATIBLE_MACHINE = "^(sf8008)$"
 
-SRC_URI[md5sum] = "3fd0d885a6f87135241bd8382140f068"
-SRC_URI[sha256sum] = "53c7d9fe4659fd105abe87d7e169f12c28b64f9b0093f0d32bbbe99a0cbaca8c"
+SRC_URI[md5sum] = "d3be1c5fcb8b8b3895f0966ba84a9612"
+SRC_URI[sha256sum] = "8d64c3d6284e8f418aaea107c9aa3c35ef9c12e0238afa06fd71f7f67f0c1284"

@@ -1,10 +1,12 @@
 SUMMARY = "Utilities for transponder & dvb-c blindscan"
 SECTION = "base"
 PRIORITY = "optional"
-RDEPENDS_${PN} = "ncurses"
-
 LICENSE = "CLOSED"
 require conf/license/license-close.inc
+
+RDEPENDS_${PN} = "ncurses"
+
+COMPATIBLE_MACHINE = "^(sf4008|sf5008)$"
 
 PACKAGES = "octagon-blindscan-dvbc-utils"
 

@@ -3,7 +3,7 @@ SECTION = "base"
 PRIORITY = "optional"
 LICENSE = "CLOSED"
 
-PACKAGE_ARCH = "${MACHINE_ARCH}"
+COMPATIBLE_MACHINE = "^(sf8008|sf8008m)$"
 
 PROVIDES += "virtual/blindscan-dvbs"
 RPROVIDES_${PN} += "virtual/blindscan-dvbs"

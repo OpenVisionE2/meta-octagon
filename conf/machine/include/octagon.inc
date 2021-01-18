@@ -6,8 +6,6 @@ BOX_BRAND = "octagon"
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	octagon-dvb-modules-${MACHINE} \
 	octagon-initrd-${MACHINE} \
-	gstreamer1.0-plugin-dvbmediasink \
-	gstreamer1.0-libav \
 	"
 
 DVBPROVIDER = "kernel"

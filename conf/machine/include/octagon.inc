@@ -6,6 +6,8 @@ BOX_BRAND = "octagon"
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	octagon-dvb-modules-${MACHINE} \
 	octagon-initrd-${MACHINE} \
+	nextv-v3ddriver-${MACHINE} \
+	platform-util-${MACHINE} \
 	"
 
 DVBPROVIDER = "kernel"
@@ -21,6 +23,8 @@ PREFERRED_PROVIDER_virtual/kernel = "linux-octagon"
 PREFERRED_VERSION_directfb = "1.7.7"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "octagon-blindscan-utils"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "octagon-blindscan-utils"
+PREFERRED_PROVIDER_virtual/egl = "nextv-v3ddriver-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles2 = "nextv-v3ddriver-${MACHINE}"
 
 MTD_ROOTFS = "mmcblk0p4"
 MTD_KERNEL = "mmcblk0p3"

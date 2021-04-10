@@ -18,6 +18,6 @@ do_compile() {
 }
 
 do_install() {
-    install -d ${D}${sysconfdir}/init.d/
-    install -m 0755 ${WORKDIR}/octagon-libreader-${MACHINE}.sh ${D}${sysconfdir}/init.d/octagon-libreader
+    install -d ${D}${INIT_D_DIR}/
+    install -m 0755 ${WORKDIR}/octagon-libreader-${MACHINE}.sh ${D}${INIT_D_DIR}/octagon-libreader
 }

@@ -26,8 +26,8 @@ do_install() {
     install -m 0644 ${S}/bootargs.bin ${D}${datadir}/bootargs.bin
     install -m 0644 ${S}/fastboot.bin ${D}${datadir}/fastboot.bin
     install -m 0644 ${S}/apploader.bin ${D}${datadir}/apploader.bin
-    install -m 0755 -d ${D}${sysconfdir}/init.d
-    install -m 0755 ${WORKDIR}/flash-apploader ${D}${sysconfdir}/init.d/flash-apploader
+    install -m 0755 -d ${D}${INIT_D_DIR}
+    install -m 0755 ${WORKDIR}/flash-apploader ${D}${INIT_D_DIR}/flash-apploader
 }
 
 FILES_${PN} = "${datadir} ${sysconfdir}"

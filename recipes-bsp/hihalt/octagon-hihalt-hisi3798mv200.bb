@@ -31,8 +31,8 @@ S = "${WORKDIR}"
 do_install() {
     install -d ${D}${bindir}
     install -m 0755 ${S}/hihalt ${D}${bindir}
-    install -d ${D}${sysconfdir}/init.d
-    install -m 0755 ${S}/suspend.sh ${D}${sysconfdir}/init.d/suspend
+    install -d ${D}${INIT_D_DIR}
+    install -m 0755 ${S}/suspend.sh ${D}${INIT_D_DIR}/suspend
     install -d ${D}${prefix}/script
     install -m 0755 ${S}/standby_leave.sh ${D}${prefix}/script/standby_leave.sh
     install -m 0755 ${S}/standby_enter.sh ${D}${prefix}/script/standby_enter.sh
@@ -41,6 +41,6 @@ do_install() {
 do_package_qa() {
 }
 
-FILES_${PN}  = "${bindir}/hihalt ${sysconfdir}/init.d /usr/script"
+FILES_${PN}  = "${bindir}/hihalt ${INIT_D_DIR} /usr/script"
 
 

@@ -55,7 +55,6 @@ PREFERRED_PROVIDER_virtual/enigma2-mediaservice = "enigma2-plugin-systemplugins-
 
 require conf/machine/include/tune-cortexa15.inc
 
-DVBSKYPROVIDER = "kernel"
 
 require conf/machine/include/soc-family.inc
 

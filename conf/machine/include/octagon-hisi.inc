@@ -21,7 +21,8 @@ CHIPSET = "Hi3798Mv200"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	octagon-dvb-modules-${MACHINE} \
-	octagon-loadmodules-${SOC_FAMILY} \ 
+	octagon-loadmodules-${SOC_FAMILY} \
+	octagon-opengl-${SOC_FAMILY} \
 	octagon-libs-${MACHINE} \
 	octagon-hihalt-${SOC_FAMILY} \
 	octagon-reader-${MACHINE} \
@@ -48,6 +49,9 @@ DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-octagon"
 PREFERRED_VERSION_linux-octagon = "${KERNELVERSION}"
+PREFERRED_PROVIDER_virtual/egl = "octagon-opengl-${SOC_FAMILY}" 
+PREFERRED_PROVIDER_virtual/libgles1 = "octagon-opengl-${SOC_FAMILY}"
+PREFERRED_PROVIDER_virtual/libgles2 = "octagon-opengl-${SOC_FAMILY}"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "octagon-blindscan-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_showiframe = "octagon-showiframe-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_aio-grab = "octagon-grab-${SOC_FAMILY}"

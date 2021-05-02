@@ -18,7 +18,6 @@ DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 IMAGE_FSTYPES += "tar.bz2"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-octagon"
-PREFERRED_VERSION_directfb = "1.7.7"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "octagon-blindscan-utils"
 PREFERRED_PROVIDER_virtual/blindscan-dvbc = "octagon-blindscan-utils"
 PREFERRED_PROVIDER_virtual/egl = "nextv-v3ddriver-${MACHINE}"

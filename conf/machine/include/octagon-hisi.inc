@@ -38,7 +38,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'partitions-by-name' , '', d)} \
 	"
 
-MACHINE_FEATURES += "switchoff 7segment hdmicec textlcd emmc mmc blindscan-dvbs alsa hisil multitranscoding HDMI AV_JACK vfdsymbol"
+MACHINE_FEATURES += "switchoff 7segment hdmicec textlcd emmc mmc blindscan-dvbs alsa hisil multitranscoding HDMI AV_JACK vfdsymbol kodi19"
 
 IMAGE_CLASSES  += "octagon-emmc_image"
 IMAGE_FSTYPES += "octagonemmc"
@@ -49,9 +49,9 @@ DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-octagon"
 PREFERRED_VERSION_linux-octagon = "${KERNELVERSION}"
-PREFERRED_PROVIDER_virtual/egl = "octagon-opengl-${SOC_FAMILY}" 
-PREFERRED_PROVIDER_virtual/libgles1 = "octagon-opengl-${SOC_FAMILY}"
-PREFERRED_PROVIDER_virtual/libgles2 = "octagon-opengl-${SOC_FAMILY}"
+PREFERRED_PROVIDER_virtual/egl ?= "octagon-opengl-${SOC_FAMILY}" 
+PREFERRED_PROVIDER_virtual/libgles1 ?= "octagon-opengl-${SOC_FAMILY}"
+PREFERRED_PROVIDER_virtual/libgles2 ?= "octagon-opengl-${SOC_FAMILY}"
 PREFERRED_PROVIDER_virtual/blindscan-dvbs = "octagon-blindscan-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_showiframe = "octagon-showiframe-${SOC_FAMILY}"
 PREFERRED_RPROVIDER_aio-grab = "octagon-grab-${SOC_FAMILY}"
